@@ -1,0 +1,24 @@
+{
+  "name": "lead-management-flow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/seed-credentials-workbook.mjs",
+    "credentials:ensure": "node scripts/seed-credentials-workbook.mjs",
+    "record:auth": "node scripts/record-auth.mjs",
+    "play:auth": "playwright test tests/salesforce-login.spec.ts --workers=1 --project=chromium",
+    "test": "playwright test tests/salesforce-login.spec.ts --workers=1 --project=chromium",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "codegen": "playwright codegen"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "exceljs": "^4.4.0"
+  }
+}
